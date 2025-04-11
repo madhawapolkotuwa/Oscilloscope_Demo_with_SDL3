@@ -1,0 +1,90 @@
+{
+    "version": 2,
+    "configurePresets": [
+        {
+            "name": "VS2022_x64x_Debug",
+            "displayName": "configure with VS2022 x64 Debug",
+            "description": "configure with VS2022 x64 Debug",
+            "generator": "Visual Studio 17 2022",
+            "toolset": "host=x64",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_CXX_COMPILER": "cl.exe"
+            }
+        },
+        {
+            "name": "VS2022_x64x_Release",
+            "displayName": "configure with VS2022 x64 Release",
+            "description": "configure with VS2022 x64 Release",
+            "generator": "Visual Studio 17 2022",
+            "toolset": "host=x64",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_CXX_COMPILER": "cl.exe"
+            }
+        },
+        {
+            "name": "windows-gcc-x64_Debug",
+            "displayName": "Windows GCC x64 (MinGW Makefiles) Debug",
+            "description": "Using GCC x64 compiler with MinGW Makefiles generator on Windows -Debug",
+            "generator": "MinGW Makefiles",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "environment": {
+                "PATH": "C:/msys64/ucrt64/bin"
+            },
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX" : "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "gcc.exe",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_CXX_COMPILER": "g++.exe"
+            }
+        },
+        {
+            "name": "windows-gcc-x64_Release",
+            "displayName": "Windows GCC x64 (MinGW Makefiles) Release",
+            "description": "Using GCC x64 compiler with MinGW Makefiles generator on Windows -Release",
+            "generator": "MinGW Makefiles",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "environment": {
+                "PATH": "C:/msys64/ucrt64/bin"
+            },
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX" : "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "gcc.exe",
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_CXX_COMPILER": "g++.exe",
+                "CMAKE_CXX_FLAGS_INIT": "--verbose"
+            }
+        },
+        {
+            "name": "clang-ninja",
+            "hidden": true,
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "clang-17",
+                "CMAKE_CXX_COMPILER": "clang++-17",
+                "CMAKE_CXX_FLAGS_INIT": "$env{CMAKE_CXX_FLAGS} -Werror -Wall -Wextra -pedantic"
+            }
+        },
+        {
+            "name": "gcc-ninja",
+            "hidden": false,
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "g++",
+                "CMAKE_C_COMPILER": "gcc",
+                "CMAKE_CXX_FLAGS_INIT": "$env{CMAKE_CXX_FLAGS} -Werror -Wall -Wextra -pedantic"
+            }
+        }
+    ]
+}
