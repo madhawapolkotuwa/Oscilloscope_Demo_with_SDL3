@@ -1,6 +1,6 @@
 ## Building a Real-Time Oscilloscope with SDL and ImGui in C++
 
-![](https://github.com/madhawapolkotuwa/Oscilloscope_Demo_with_SDL3/blob/main/SDLOscilloscope.gif)
+![](https://github.com/madhawapolkotuwa/Oscilloscope_Demo_with_SDL3/blob/master/SDLOscilloscope.gif)
 
 
 # YouTube Video
