@@ -1,4 +1,6 @@
+.gitignore
 /out
+/build
 /extern/*
 /.vscode
 /DetectionSignals
